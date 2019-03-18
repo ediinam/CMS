@@ -51,10 +51,10 @@
                         <input type="text" class="form-control img-input" id="statusinput" name="upload_cover">
                          <div class="upload-imgs-container  upload-imgs-container-width">
                             <div class="upload-image-container">
-                                <input type="file" class="dropzone" id="coverslika" onchange="statusInput('coverslika','statusinput')">
+                                <input type="file" class="dropzone" name="coverslika" id="coverslika" onchange="statusInput('coverslika','statusinput')">
                             </div>
                             <div>
-                               <input type="file" value="Upload" id="coverslikabtn" class="upload-btn" onchange="statusInput('coverslikabtn','statusinput')">
+                               <input type="file" value="Upload" name="coverslikabtn" id="coverslikabtn" class="upload-btn" onchange="statusInput('coverslikabtn','statusinput')">
                             </div>
                         </div>
                     </div>
@@ -66,10 +66,10 @@
                         <!-- <div id="uploads"></div> -->
                          <div class="upload-imgs-container upload-imgs-container-width">
                             <div class="upload-image-container">
-                                <input type="file" class="dropzone" id="uploadslika" onchange="statusInput('uploadslika','statusinput2')">
+                                <input type="file" class="dropzone" id="uploadslika" name="uploadslika" onchange="statusInput('uploadslika','statusinput2')">
                             </div>
                             <div>
-                               <input type="file" value="Upload" id="uploadslikabtn" class="upload-btn" onchange="statusInput('uploadslikabtn','statusinput2')">
+                               <input type="file" value="Upload" id="uploadslikabtn" name="uploadslikabtn" class="upload-btn" onchange="statusInput('uploadslikabtn','statusinput2')">
                             </div>
                         </div>
                     </div>

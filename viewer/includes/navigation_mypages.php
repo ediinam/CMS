@@ -22,7 +22,7 @@ prikaziProfil();
             <li class="user user-menu">
                 <a href="profil.php">
                     <span class="hidden-xs"><?php echo $korisnici_ime_prezime; ?></span>
-                    <img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
+                    <img src="../img/<?php echo $korisnici_slika; ?>" class="user-image" alt="User Image">
                 </a>
             </li>
             <li>

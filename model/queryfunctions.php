@@ -101,19 +101,6 @@ function dodajRedTabele($ime_tabele,$red_tabele){
    }
    return $message;
 }
-// function vrijednostRedaTabele($ime_tabele,$id_reda,$vrijednost_kolone){
-//   global $connection;
-//   $ime_tabele_id=$ime_tabele."_id";
-//   $ime_tabele_vrijednost=$ime_tabele."_".$vrijednost_kolone;
-//   $query = "SELECT * FROM $ime_tabele WHERE $ime_tabele_id = {$id_reda} ";
-//   $send_query = mysqli_query($connection, $query);
-//   if(!$send_query){
-//     die("Greška! Ne moze se ostvariti query!").mysqli_error($connection);
-//   }
-//   $rezultat=mysqli_fetch_assoc($send_query);
-//   return $rezultat[$ime_tabele_vrijednost];
-//   //return $send_query;
-// }
 
 function statusRedaTabele($ime_tabele,$id_reda){
   global $connection;

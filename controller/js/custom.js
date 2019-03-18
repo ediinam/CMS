@@ -30,7 +30,6 @@ function statusInput(uploadimg, showimgname) {
 
 function uploadFile() {
     var file = _("file1").files[0];
-    // alert(file.name+" | "+file.size+" | "+file.type);
     var formdata = new FormData();
     formdata.append("file1", file);
     var ajax = new XMLHttpRequest();
@@ -58,4 +57,5 @@ function abortHandler(event) {
 $(".odustani").click(function() {
     $(this).parent().parent()[0].reset();
     $("input").removeClass("error-field");
+    $("#modal_window").css("display", "none");
 });

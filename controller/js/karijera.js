@@ -54,7 +54,7 @@ $('button.izbrisikarijera').click(function(event) {
 });
 //KRAJ brisanje reda
 
-//Ubacivanje novog reda u tabelu
+//Ubacivanje novog reda u tabelu ili izmjena postojeceg
 $("#forma_karijera").submit(function(event) {
     event.preventDefault();
     if ($("#naslov").val() == "" || $("#nasloven").val() == "" || $("#datepicker").val() == "" || $("#datepicker2").val() == "" || $("#opis").val() == "" || $("#opisen").val() == "" || $("#statusinput").val() == "") {

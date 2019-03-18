@@ -18,5 +18,4 @@ if(isset($_GET['proizvodi_id'])){
     $proizvodi = statusRedaTabele('proizvodi',$proizvodi_id);
     echo $proizvodi;
 }
-
 ?>

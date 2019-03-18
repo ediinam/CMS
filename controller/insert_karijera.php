@@ -1,12 +1,13 @@
 <?php 
  include "../model/db.php"; 
  include "../model/queryfunctions.php"; 
-    $karijera_naslov = $_POST['naslov'];
-    $karijera_naslov_en = $_POST['nasloven'];
+ include "functions.php";
+    $karijera_naslov = check_input($_POST['naslov']);
+    $karijera_naslov_en = check_input($_POST['nasloven']);
     $karijera_pocetak = $_POST['datum_pocetka'];
     $karijera_kraj = $_POST['datum_zavrsetka'];
-    $karijera_opis = $_POST['opis'];
-    $karijera_opis_en = $_POST['opisen'];
+    $karijera_opis = check_input($_POST['opis']);
+    $karijera_opis_en = check_input($_POST['opisen']);
     // $karijera_cover = $_POST['cover_fotografija'];
 
     if(isset($_POST['karijera_id']) && empty($_POST['karijera_id'])){

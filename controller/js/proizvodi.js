@@ -54,7 +54,7 @@ $('button.izbrisiproizvodi').click(function(event) {
 });
 //KRAJ brisanje reda
 
-// Ubacivanje novog reda u tabelu
+// Ubacivanje novog reda u tabelu ili izmjena postojeceg
 $("#forma_proizvodi").submit(function(event) {
     event.preventDefault();
     if ($("#naziv").val() == "" || $("#naziven").val() == "" || $("#opis").val() == "" || $("#opisen").val() == "" || $("#uvodni_tekst").val() == "" || $("#uvodni_teksten").val() == "" || $("#statusinput").val() == "" || $("#statusinput2").val() == "" || $("#alt").val() == "" || $("#alten").val() == "") {
@@ -136,7 +136,7 @@ function parseJsonProizvodi(response) {
     $("#statusinput").val(response['proizvodi_cover']);
     $("#statusinput2").val(response['proizvodi_uvodna_foto']);
     $("#alt").val(response['proizvodi_alt']);
-    $("#alten").val(response['proivodi_alt_en']);
+    $("#alten").val(response['proizvodi_alt_en']);
 }
 
 // Otvaranje modala i popunjavanje podacima iz tabele
