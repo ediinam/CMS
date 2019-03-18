@@ -11,7 +11,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header naslov-stranice">
                 <h2>Administracija blogova</h2>
-                <button class="btn margin logo-bgr-dark" id="open_modal">Dodaj blog</button>
+                <button class="btn margin logo-bgr-dark" id="open_modal_blog">Dodaj blog</button>
             </section>
 
             <!-- Main content -->

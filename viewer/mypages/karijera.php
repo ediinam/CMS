@@ -9,7 +9,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header dugme-dodaj">
-                <button class="btn margin logo-bgr-dark" id="open_modal">Dodaj konkurs</button>
+                <button class="btn margin logo-bgr-dark" id="open_modal_karijera">Dodaj konkurs</button>
             </section>
 
             <!-- Main content -->

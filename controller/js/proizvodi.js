@@ -90,26 +90,75 @@ $("#forma_proizvodi").submit(function(event) {
             $("#alten").addClass("error-field").notify("Unesite alt tag!", "error");
         }
 
+    } else {
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: '../../controller/insert_proizvodi.php',
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(message) {
+                if (message.startsWith("Greška! ")) {
+                    alertify.showFailure(message).set('maximizable', false);
+                } else if (message == "Uspješno uneseno!") {
+                    alertify.showSuccess("Uspješno ste dodali blog!").set('maximizable', false);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
+                } else if (message == "Uspješno promijenjeno!") {
+                    alertify.showSuccess("Izmjene su uspješno sačuvane!").set('maximizable', false);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    alertify.showFailure(message).set('maximizable', false);
+                }
+            }
+        });
     }
-    // else {
-    //     var formData = new FormData($(this)[0]);
-    //     $.ajax({
-    //         url: '../../controller/insert_proizvod.php',
-    //         type: 'POST',
-    //         data: formData,
-    //         async: false,
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function(message) {
-    //             if (message.startsWith("Greška! ")) {
-    //                 alertify.showFailure(message).set('maximizable', false);
-    //             } else {
-    //                 alertify.showSuccess(message).set('maximizable', false);
-    //                 //$("#modal_window").css("display", "none");
-    //             }
-    //         }
-    //     });
-    // }
 
+});
+
+function parseJsonProizvodi(response) {
+    response = JSON.parse(response);
+    $("#proizvodi_id").val(response['proizvodi_id']);
+    $("#naziv").val(response['proizvodi_naziv']);
+    $("#naziven").val(response['proizvodi_naziv_en']);
+    $("#opis").val(response['proizvodi_opis']);
+    $("#opisen").val(response['proizvodi_opis_en']);
+    $("#uvodni_tekst").val(response['proizvodi_uvodni_tekst']);
+    $("#uvodni_teksten").val(response['proizvodi_uvodni_tekst_en']);
+    // $("#editor1").val(response['proizvodi_glavni_tekst']);
+    // $("#editor2").val(response['proizvodi_glavni_tekst_en']);
+    $("#statusinput").val(response['proizvodi_cover']);
+    $("#statusinput2").val(response['proizvodi_uvodna_foto']);
+    $("#alt").val(response['proizvodi_alt']);
+    $("#alten").val(response['proivodi_alt_en']);
+}
+
+// Otvaranje modala i popunjavanje podacima iz tabele
+$('button.izmijeniproizvodi').click(function(event) {
+    event.preventDefault();
+    let id = $(this).attr('name');
+    //let red = $(this).parent().parent();
+    $.ajax({
+        url: '../../controller/fill_modal.php',
+        type: 'GET',
+        data: 'izmijeni_proizvodi_id=' + id,
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(message) {
+            if (message.startsWith("{")) {
+                parseJsonProizvodi(message);
+                displayModal();
+            } else {
+                alertify.showFailure("Došlo je do greške!").set('maximizable', false);
+            }
+        }
+    });
 });

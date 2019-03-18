@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header dugme-dodaj">
-                <button class="btn margin logo-bgr-dark" id="open_modal">Dodaj proizvod</button>
+                <button class="btn margin logo-bgr-dark" id="open_modal_proizvodi">Dodaj proizvod</button>
             </section>
 
             <!-- Main content -->

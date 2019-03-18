@@ -42,8 +42,24 @@ function hideRow(el) {
 
 $(document).ready(function() {
     //modal za popunjavanje 
-    if ($("#open_modal").length > 0) {
-        $('#open_modal').click(displayModal)
+
+    if ($("#open_modal_blog").length > 0) {
+        $('#open_modal_blog').click(function() {
+            $("#forma_blog")[0].reset();
+            displayModal();
+        });
+    }
+    if ($("#open_modal_karijera").length > 0) {
+        $('#open_modal_karijera').click(function() {
+            $("#forma_karijera")[0].reset();
+            displayModal();
+        });
+    }
+    if ($("#open_modal_proizvodi").length > 0) {
+        $('#open_modal_proizvodi').click(function() {
+            $("#forma_proizvodi")[0].reset();
+            displayModal();
+        });
     }
     //tabela
     $(function() {

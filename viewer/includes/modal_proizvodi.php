@@ -9,6 +9,7 @@
                     <div class="display-flex-row-evenly">
                         <h3>Crnogorski</h3>
                         <h3 class="text-right">Engleski</h3>
+                        <input type="text" name="proizvodi_id" id="proizvodi_id" style="display:none;">
                     </div>
 
                     <div class="form-group">

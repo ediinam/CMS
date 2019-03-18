@@ -5,7 +5,7 @@ function izaberiSveIzTabele($ime_tabele){
   $query = "SELECT * FROM $ime_tabele ";
   $send_query = mysqli_query($connection, $query);
   if(!$send_query){
-    die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+    die("Greška! Ne moze se ostvariti query izaberi sve iz tabele!").mysqli_error($connection);
   }
   $rezultat=array();
   if(mysqli_num_rows($send_query)>0){
@@ -22,7 +22,7 @@ function izaberiRedTabele($ime_tabele,$id_reda){
   $query = "SELECT * FROM $ime_tabele WHERE $ime_tabele_id = {$id_reda} ";
   $send_query = mysqli_query($connection, $query);
   if(!$send_query){
-    die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+    die("Greška! Ne moze se ostvariti query izaberi red tabele!").mysqli_error($connection);
   }
   $rezultat=mysqli_fetch_assoc($send_query);
   return $rezultat;
@@ -33,7 +33,7 @@ function izaberiRedTabeleKorisnici($korisnicko_ime,$lozinka){
   $query = "SELECT * FROM korisnici WHERE korisnici_korisnicko_ime = '$korisnicko_ime' AND korisnici_lozinka = '$lozinka' ";
   $send_query = mysqli_query($connection, $query);
   if(!$send_query){
-    die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+    die("Greška! Ne moze se ostvariti query izaberi red tabele korisnici!").mysqli_error($connection);
   }
   return $send_query;
 }
@@ -44,7 +44,7 @@ function izbrisiRedTabele($ime_tabele,$id_reda){
   $query = "DELETE FROM $ime_tabele WHERE $ime_tabele_id = {$id_reda} ";
   $izbrisi_red = mysqli_query($connection, $query);
   if(!$izbrisi_red){
-    die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+    die("Greška! Ne moze se ostvariti query izbrisi red tabele!").mysqli_error($connection);
   }else{
     echo "Uspješno izbrisano!";
   }
@@ -65,9 +65,9 @@ function promijeniRedTabele($ime_tabele,$id_reda,$kolone_tabele){
   $query.=" WHERE $ime_tabele_id = $id_reda ";
   $promijeni_red = mysqli_query($connection, $query);
   if(!$promijeni_red){
-     die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+     die("Greška! Ne moze se ostvariti query promijeni red tabele!").mysqli_error($connection);
    }else{
-     $message= 'da';
+     $message= 'Uspješno promijenjeno!';
    }
    return $message;
 }
@@ -95,9 +95,9 @@ function dodajRedTabele($ime_tabele,$red_tabele){
 }
   $dodaj_red = mysqli_query($connection, $query);
   if(!$dodaj_red){
-     die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+     die("Greška! Ne moze se ostvariti query dodaj red tabele!").mysqli_error($connection);
    }else{
-     $message= 'da';
+     $message= 'Uspješno uneseno!';
    }
    return $message;
 }
@@ -108,7 +108,7 @@ function dodajRedTabele($ime_tabele,$red_tabele){
 //   $query = "SELECT * FROM $ime_tabele WHERE $ime_tabele_id = {$id_reda} ";
 //   $send_query = mysqli_query($connection, $query);
 //   if(!$send_query){
-//     die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+//     die("Greška! Ne moze se ostvariti query!").mysqli_error($connection);
 //   }
 //   $rezultat=mysqli_fetch_assoc($send_query);
 //   return $rezultat[$ime_tabele_vrijednost];
@@ -130,9 +130,15 @@ function statusRedaTabele($ime_tabele,$id_reda){
 $query_change = "UPDATE $ime_tabele SET $ime_tabele_status = '$rezultat' WHERE $ime_tabele_id = {$id_reda} ";
 $send_query_change = mysqli_query($connection, $query_change);
 if(!$send_query_change){
-  die("Greska! Ne moze se ostvariti query!").mysqli_error($connection);
+  die("Greška! Ne moze se ostvariti query status reda tabele!").mysqli_error($connection);
 }
   return $send_query_change;
+}
+
+function ulogaKorisnika($id_reda){
+  global $connection;
+  $rezultat = izaberiRedTabele('korisnici',$id_reda)['korisnici_uloga'];
+  return $rezultat;
 }
 
 function promijeniLozinku($id_reda,$nova_lozinka){

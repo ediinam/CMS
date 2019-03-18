@@ -9,6 +9,7 @@
                 <div class="display-flex-row-evenly">
                     <h3>Crnogorski</h3>
                     <h3 class="text-right">Engleski</h3>
+                    <input type="text" name="karijera_id" id="karijera_id" style="display:none;">
                 </div>
 
                 <div class="form-group">
@@ -25,7 +26,7 @@
                     <div class="">
                         <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                            <input type="text" class="form-control pull-right" id="datepicker" placeholder="DD/MM/YY">
+                            <input type="text" class="form-control pull-right" name="datum_pocetka" id="datepicker" placeholder="DD/MM/YY">
                         </div>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
                     <div class="">
                         <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                            <input type="text" class="form-control pull-right" id="datepicker2" placeholder="DD/MM/YY">
+                            <input type="text" class="form-control pull-right" name="datum_zavrsetka" id="datepicker2" placeholder="DD/MM/YY">
                         </div>
                     </div>
                 </div>

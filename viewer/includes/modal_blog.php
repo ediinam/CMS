@@ -9,6 +9,7 @@
                     <div class="display-flex-row-evenly">
                         <h3>Crnogorski</h3>
                         <h3 class="text-right">Engleski</h3>
+                        <input type="text" name="blog_id" id="blog_id" style="display:none;">
                     </div>
 
 
@@ -83,7 +84,7 @@
                     <div class="form-group">
                         <label>Tagovi</label>
                         <div class="display-flex-row-evenly">
-                            <input type="text" class="form-control"mname="tag" id="tag">
+                            <input type="text" class="form-control" name="tag" id="tag">
                             <input type="text" class="form-control" name="tagen" id="tagen">
                         </div>
                     </div>

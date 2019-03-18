@@ -23,29 +23,6 @@ $('button.deaktivirajkarijera').click(function(event) {
 });
 // KRAJ mijenjanje statusa
 
-//Mijenjanje reda u tabeli
-$('button.izmijenikarijera').click(function(event) {
-    event.preventDefault();
-    let id = $(this).attr('name');
-    $.ajax({
-        url: '../../controller/change_row_table.php',
-        type: 'GET',
-        data: 'karijera_id=' + id,
-        async: false,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(message) {
-            if (message.startsWith("Array")) {
-                alertify.showSuccess(message).set('maximizable', false);
-            } else {
-                alertify.showFailure(message).set('maximizable', false);
-            }
-        }
-    });
-});
-//KRAJ mijenjanje reda
-
 //Brisanje reda u tabeli
 $('button.izbrisikarijera').click(function(event) {
     event.preventDefault();
@@ -104,28 +81,75 @@ $("#forma_karijera").submit(function(event) {
             $("#statusinput").addClass("error-field").notify("Morate unijeti cover fotografiju novosti!", "error");
         }
 
+    } else {
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: '../../controller/insert_karijera.php',
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(message) {
+                if (message.startsWith("Greška! ")) {
+                    alertify.showFailure(message).set('maximizable', false);
+                } else if (message == "Uspješno uneseno!") {
+                    alertify.showSuccess("Uspješno ste dodali blog!").set('maximizable', false);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
+                } else if (message == "Uspješno promijenjeno!") {
+                    alertify.showSuccess("Izmjene su uspješno sačuvane!").set('maximizable', false);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    alertify.showFailure(message).set('maximizable', false);
+                }
+            }
+        });
     }
-    // else {
-    //     var formData = new FormData($(this)[0]);
-    //     $.ajax({
-    //         url: '../../controller/insert_karijera.php',
-    //         type: 'POST',
-    //         data: formData,
-    //         async: false,
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function(message) {
-    //             if (message.startsWith("Greška! ")) {
-    //                 alertify.showFailure(message).set('maximizable', false);
-    //             } else {
-    //                 alertify.showSuccess(message).set('maximizable', false);
-    //                 //$("#modal_window").css("display", "none");
-    //             }
-    //         }
-    //     });
-    // }
 
 });
 
 // Kraj ubacivanje novog elementa u tabelu
+
+//Popunjavanje modala
+function parseJsonKarijera(response) {
+    response = JSON.parse(response);
+    $("#karijera_id").val(response['karijera_id']);
+    $("#naslov").val(response['karijera_naslov']);
+    $("#nasloven").val(response['karijera_naslov_en']);
+    $("#datepicker").val(response['karijera_pocetak']);
+    $("#datepicker2").val(response['karijera_kraj']);
+    $("#opis").val(response['karijera_opis']);
+    $("#opisen").val(response['karijera_opis_en']);
+    $("#statusinput").val(response['karijera_cover']);
+}
+
+// Otvaranje modala i popunjavanje podacima iz tabele
+$('button.izmijenikarijera').click(function(event) {
+    event.preventDefault();
+    let id = $(this).attr('name');
+    //let red = $(this).parent().parent();
+    $.ajax({
+        url: '../../controller/fill_modal.php',
+        type: 'GET',
+        data: 'izmijeni_karijera_id=' + id,
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(message) {
+            if (message.startsWith("{")) {
+                //alertify.showFailure(message);
+                parseJsonKarijera(message);
+                displayModal();
+            } else {
+                alertify.showFailure("Došlo je do greške!").set('maximizable', false);
+            }
+        }
+    });
+
+});
