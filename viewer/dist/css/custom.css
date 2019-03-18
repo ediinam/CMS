@@ -1,0 +1,330 @@
+/* Dugme dodaj za tabelu */
+
+.error-field {
+    -webkit-box-shadow: 0 0 2px 1px rgba(250, 21, 5, 1);
+    -moz-box-shadow: 0 0 2px 1px rgba(250, 21, 5, 1);
+    box-shadow: 0 0 2px 1px rgba(250, 21, 5, 1);
+}
+
+.logo-bgr-dark {
+    background-color: rgb(73, 77, 88) !important;
+    color: white;
+}
+
+.bgr-light-blue {
+    background-color: rgb(236, 240, 245);
+}
+
+.bgr-warning {
+    background-color: rgb(206, 106, 106);
+    color: black;
+}
+
+.logo-bgr-light {
+    background-color: rgb(0, 185, 177) !important;
+    color: white;
+}
+
+.bgr-success {
+    background-color: rgb(87, 196, 112);
+}
+
+.bgr-fail {
+    background-color: rgb(198, 201, 194);
+}
+
+.dugme-dodaj {
+    /* float: right; */
+    /* position: relative;
+    right: 78vw; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.naslov-stranice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dugme-sacuvaj {
+    border: 1px solid rgb(0, 185, 177);
+    background-color: white;
+}
+
+.paginate_button.active a {
+    background-color: rgb(0, 185, 177);
+    border-color: rgb(0, 185, 177)
+}
+
+
+/* Modal za dugme dodaj */
+
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1032;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-pop-up-exit {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.modal-pop-up-exit:after {
+    display: inline-block;
+    content: "\00d7";
+}
+
+.modal-body {
+    position: relative;
+    top: 5vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 90vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.modal-body-newpass {
+    position: relative;
+    top: 30vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 40vh;
+    width: 40vw;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.modal-body-password {
+    margin: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.display-flex-row-evenly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.display-flex-row-evenly>input,
+.display-flex-row-evenly>div,
+.display-flex-row-evenly>textarea,
+.display-flex-row-evenly>form {
+    width: 100%;
+    margin: 0 5px;
+}
+
+.form-group>label {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+}
+
+.display-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.display-flex-column>div {
+    margin-bottom: 10px;
+}
+
+.modal-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.modal-element {
+    width: 100%;
+    height: auto;
+    padding: 10px 25px;
+}
+
+.modal-btns {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.table-btn {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* background-color: rgb(236, 240, 245); */
+}
+
+.table-btn:focus {
+    outline: none;
+}
+
+h3 {
+    padding-left: 7px;
+    width: 30%;
+    border-bottom: 1px solid rgb(0, 185, 177);
+}
+
+#datepicker {
+    z-index: 1035;
+}
+
+.upload-imgs-container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.upload-imgs-container-width {
+    width: 50%;
+}
+
+.upload-profileimg-container-width {
+    width: 100%;
+}
+
+.upload-image-container {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+}
+
+.upload-btn {
+    top: 100%;
+    transform: translateY(100%);
+    /* transform: translateY(520%); */
+    margin: 0 5px;
+    border-radius: 10px;
+}
+
+.upload-btn:after {
+    position: absolute;
+    text-align: center;
+    color: black;
+    background-color: white;
+    content: 'Upload';
+    width: 100px;
+    height: 27px;
+    top: -5px;
+    left: 0;
+    border-bottom: 2px solid rgb(73, 77, 88);
+    border-radius: 8px;
+    padding: 5px 8px;
+    font-weight: 400;
+    font-size: 12pt;
+    margin: 0;
+}
+
+.browse-btn {
+    display: block;
+    border-bottom: 2px solid rgb(73, 77, 88);
+    border-radius: 8px;
+    padding: 5px 8px;
+    font-weight: 400;
+    font-size: 12pt;
+    margin: 0 5px;
+}
+
+.browse-btn:hover {
+    border-color: rgb(0, 185, 177);
+}
+
+.lozinka-width {
+    width: 200px !important;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: white;
+}
+
+.add-img {
+    width: 100%;
+    height: auto;
+    margin-top: -15vh;
+}
+
+.dropzone::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.dropzone {
+    width: 100%;
+    height: 100%;
+    padding-top: 15vh;
+    border: 7px dashed lightgrey;
+    border-radius: 20px;
+    text-align: center;
+    color: grey;
+}
+
+.dropzone::before {
+    content: "";
+    background: url("../../img/uploadimg.png");
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: lightgray;
+    z-index: 1031;
+}
+
+.dropzone:hover {
+    border-color: rgb(0, 185, 177);
+}
+
+input[type=file] {
+    color: transparent;
+}
+
+.form-container {
+    margin: 0 auto;
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+}
+
+
+/* animacije */
+
+@keyframes pop-up-window {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(-30vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
