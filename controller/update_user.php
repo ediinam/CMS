@@ -27,8 +27,9 @@ if(isset($_SESSION['kor_id'])){
     }else if($profilna_fotografija2 == $profilna_fotografija_name){
          move_uploaded_file($profilna_fotografija2_tmp, "../viewer/img/$profilna_fotografija2");
         //echo "Od dvije slike, zadnja je dodata na button";
-    }else if(empty($profilna_fotografija1) && empty($profilna_fotografija2)){
-        //ostavljamo name
+    }else if(empty($profilna_fotografija1) && empty($profilna_fotografija2 && empty($profilna_fotografija_name))){
+        //ostavljamo default
+        $profilna_fotografija_name = "avatar.png";
     }
 
     $uloga = ulogaKorisnika($id_usera);

@@ -63,6 +63,8 @@ function parseJsonBlog(response) {
     $("#datepicker").val(response['blog_vrijeme']);
     $("#uvodni_tekst").val(response['blog_uvodni_tekst']);
     $("#uvodni_teksten").val(response['blog_uvodni_tekst_en']);
+    $("#editor1").html(response['blog_glavni_tekst']);
+    $("#editor2").val(response['blog_glavni_tekst_en']);
     $("#statusinput").val(response['blog_cover']);
     $("#alt").val(response['blog_alt']);
     $("#alten").val(response['blog_alt_en']);
@@ -118,6 +120,12 @@ $("#forma_blog").submit(function(event) {
         if ($("#uvodni_teksten").val() == "") {
             $("#uvodni_teksten").addClass("error-field").notify("Morate unijeti uvodni tekst!", "error");
         }
+        // if ($("#editor1").val() == "") {
+        //     $("#editor1").addClass("error-field").notify("Morate unijeti glavni tekst!", "error");
+        // }
+        // if ($("#editor2").val() == "") {
+        //     $("#editor2").addClass("error-field").notify("Morate unijeti glavni tekst!", "error");
+        // }
         if ($("#statusinput").val() == "") {
             $("#statusinput").addClass("error-field").notify("Morate unijeti cover fotografiju novosti!", "error");
         }

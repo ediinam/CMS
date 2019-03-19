@@ -80,7 +80,7 @@ function prikaziTabeluProizvodi(){
     echo "<tr>";
     echo "<td>{$proizvodi_id}</td>";
     echo "<td>{$proizvodi_naziv}</td>";
-    echo "<td>{$proizvodi_datum_unosa}</td>";
+    echo "<td data-order='{$proizvodi_datum_unosa}'>{$proizvodi_datum_unosa}</td>";
     echo "<td><button class='izmijeniproizvodi bgr-light-blue table-btn' name='{$proizvodi_id}'>Izmijeni</button></td>";
     echo "<td><button class='deaktivirajproizvodi logo-bgr-dark table-btn' name='{$proizvodi_id}'>$status</button></td>";
     echo "<td><button class='izbrisiproizvodi bgr-warning table-btn' name='{$proizvodi_id}'>Izbriši</button></td>";
@@ -111,6 +111,10 @@ function prikaziTabeluProizvodi(){
     $korisnici_pozicija=$korisnici['korisnici_pozicija'];
     $korisnici_slika=$korisnici['korisnici_slika'];
     $korisnici_uloga=$korisnici['korisnici_uloga'];
+
+    if($korisnici_slika == ''){
+      $korisnici_slika = 'avatar.png';
+    }
   
     return $connection;
     return $korisnici_ime_prezime;

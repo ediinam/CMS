@@ -8,6 +8,7 @@
 
     </div>
     <!-- ./wrapper -->
+   
     <!-- jQuery 3 -->
     <script src="../dist/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -33,8 +34,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
         <!-- CK Editor -->
-        <script src="../dist/ckeditor/ckeditor.js"></script>
-        <script src="../dist/ckeditor/adapters/jquery.js"></script>
+        <!-- <script src="../dist/ckeditor/adapters/jquery.js"></script> -->
     <!-- bootstrap datepicker -->
     <script src="../dist/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <!-- include alertify and notify scripts -->

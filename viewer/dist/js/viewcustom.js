@@ -78,8 +78,18 @@ $(document).ready(function() {
             // Replace the <textarea id="editor1"> with a CKEditor
             // instance, using default configuration.
             if ($("#editor1").length > 0 || $("#editor2").length > 0) {
-                CKEDITOR.replace('editor1')
-                CKEDITOR.replace('editor2')
+                // CKEDITOR.replace('editor1')
+                // CKEDITOR.replace('editor2')
+                ClassicEditor
+                    .create(document.querySelector('#editor1'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+                ClassicEditor
+                    .create(document.querySelector('#editor2'))
+                    .catch(error => {
+                        console.error(error);
+                    });
             }
             //bootstrap WYSIHTML5 - text editor
             //  $('.textarea').wysihtml5()

@@ -50,13 +50,13 @@
                         </div>
                     </div>
 
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="">Tekst bloga</label>
                         <div class="display-flex-row-evenly">
                             <div><textarea id="editor1" name="editor1" rows="8" cols="50"></textarea></div>
                             <div><textarea id="editor2" name="editor2" rows="8" cols="50"></textarea></div>
                         </div>
-                    </div> -->
+                    </div>
 
 
                     <div class="form-group">
