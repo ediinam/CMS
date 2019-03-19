@@ -12,6 +12,8 @@
 
 <!-- include semantic ui theme  -->
 <link rel="stylesheet" href="viewer/dist/alertify/css/themes/semantic.css">
+<link rel="stylesheet" href="../dist/css/reset.css">
+    <link rel="stylesheet" href="../dist/css/normalize.css">
     <link rel="stylesheet" href="viewer/dist/css/index.css">
     <title>Login</title>
 </head>

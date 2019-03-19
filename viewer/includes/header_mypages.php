@@ -33,6 +33,8 @@ $korisnik_id = $_SESSION['kor_id']; ?> -->
         <!-- include alertify.css -->
   <link rel="stylesheet" href="../dist/alertify/css/alertify.css">
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/reset.css">
+    <link rel="stylesheet" href="../dist/css/normalize.css">
     <link rel="stylesheet" href="../dist/css/custom.css">
     <!-- <script src="../dist/ckeditor/ckeditor.js"></script>
     <script src="../dist/ckeditor/ckeditor.js.map"></script> -->
