@@ -275,7 +275,7 @@ h3 {
     color: grey;
 }
 
-.dropzone::before {
+.dropzone::after {
     content: "";
     background: url("../../img/uploadimg.png");
     opacity: 0.2;
@@ -306,6 +306,29 @@ input[type=file] {
     width: 60%;
     padding: 20px;
     background-color: white;
+}
+
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1032;
+}
+
+.tag_input:read-only {
+    background-color: white;
+    color: grey;
+    font-style: oblique;
+    border-radius: 5px;
+    margin: 5px 3px;
+    -webkit-box-shadow: inset 0 0 25px 1px lightgrey;
+    -moz-box-shadow: inset 0 0 25px 1px lightgrey;
+    box-shadow: inset 0 0 25px 1px lightgrey;
 }
 
 

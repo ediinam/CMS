@@ -61,9 +61,10 @@
 
                     <div class="form-group">
                         <label for="">Upload cover fotografije</label>
-                        <input type="text" class="form-control img-input" id="statusinput" name="cover_fotografija">
+                        <input type="text" class="form-control img-input" id="statusinput" name="cover_fotografija" readonly>
                         <div class="upload-imgs-container upload-imgs-container-width">
                             <div class="upload-image-container">
+                            <img src="" class="preview-img fotografija" id="cover_preview" alt="Prevucite sliku!">
                                 <input type="file" class="dropzone" id="coverslika" name="coverslika" onchange="statusInput('coverslika','statusinput')">
                             </div>
                             <div>
@@ -84,8 +85,12 @@
                     <div class="form-group">
                         <label>Tagovi</label>
                         <div class="display-flex-row-evenly">
-                            <input type="text" class="form-control" name="tag" id="tag">
-                            <input type="text" class="form-control" name="tagen" id="tagen">
+                            <input type="text" class="form-control" id="tag">
+                            <input type="text" class="form-control" id="tagen">
+                        </div>
+                        <div class="display-flex-row-evenly">
+                            <input type="text" class="form-control tag_input" name="tag" id="prikaz_tag" readonly>
+                            <input type="text" class="form-control tag_input" name="tagen" id="prikaz_tagen" readonly>
                         </div>
                     </div>
             </div>

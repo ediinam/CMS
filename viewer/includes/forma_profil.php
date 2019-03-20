@@ -25,10 +25,11 @@
 
 <div class="form-group">
 <label for="">Profilna fotografija</label>
-<input type="text" class="form-control img-input" id="profilna_fotografija" name="profilna_fotografija" value="<?php echo $korisnici_slika;?>">
+<input type="text" class="form-control img-input fotografija" id="profilna_fotografija" name="profilna_fotografija" value="<?php echo $korisnici_slika;?>" readonly>
 <!-- <div id="uploads"></div> -->
 <div class="upload-imgs-container upload-profileimg-container-width">
 <div class="upload-image-container">
+<img src="../img/<?php echo $korisnici_slika;?>" class="preview-img fotografija" alt="Prevucite sliku!">
 <input type="file" class="dropzone" id="profilnaslika" name="profilnaslika" onchange="statusInput('profilnaslika','profilna_fotografija')">
 </div>
 <div>

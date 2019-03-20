@@ -77,12 +77,6 @@ $("#forma_proizvodi").submit(function(event) {
         if ($("#uvodni_teksten").val() == "") {
             $("#uvodni_teksten").addClass("error-field").notify("Morate unijeti uvodni tekst!", "error");
         }
-        // if ($("#editor1").val() == "") {
-        //     $("#editor1").addClass("error-field").notify("Morate unijeti glavni tekst!", "error");
-        // }
-        // if ($("#editor2").val() == "") {
-        //     $("#editor2").addClass("error-field").notify("Morate unijeti glavni tekst!", "error");
-        // }
         if ($("#statusinput").val() == "") {
             $("#statusinput").addClass("error-field").notify("Morate unijeti cover fotografiju novosti!", "error");
         }
@@ -140,7 +134,9 @@ function parseJsonProizvodi(response) {
     $("#editor1").val(response['proizvodi_glavni_tekst']);
     $("#editor2").val(response['proizvodi_glavni_tekst_en']);
     $("#statusinput").val(response['proizvodi_cover']);
+    $("#cover_preview").attr('src', '../img/' + response['proizvodi_cover']);
     $("#statusinput2").val(response['proizvodi_uvodna_foto']);
+    $("#upload_preview").attr('src', '../img/' + response['proizvodi_uvodna_foto']);
     $("#alt").val(response['proizvodi_alt']);
     $("#alten").val(response['proizvodi_alt_en']);
 }

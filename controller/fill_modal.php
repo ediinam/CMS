@@ -8,6 +8,8 @@ if(isset($_GET['izmijeni_blog_id'])){
     $red = izaberiRedTabele('blog',$id_reda);
     $red['blog_glavni_tekst'] = str_replace( '&', '&amp;', $red['blog_glavni_tekst'] );
     $red['blog_glavni_tekst_en'] = str_replace( '&', '&amp;', $red['blog_glavni_tekst_en'] );
+    $red['blog_tag'] = str_replace( '|', ',', $red['blog_tag'] );
+    $red['blog_tag_en'] = str_replace( '|', ',', $red['blog_tag_en'] );
     $response = responseAsArray($red);
     echo $response;
 }

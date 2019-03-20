@@ -66,10 +66,13 @@ function parseJsonBlog(response) {
     $("#editor1").html(response['blog_glavni_tekst']);
     $("#editor2").val(response['blog_glavni_tekst_en']);
     $("#statusinput").val(response['blog_cover']);
+    $("#cover_preview").attr('src', '../img/' + response['blog_cover']);
     $("#alt").val(response['blog_alt']);
     $("#alten").val(response['blog_alt_en']);
     $("#tag").val(response['blog_tag']);
     $("#tagen").val(response['blog_tag_en']);
+    $("#prikaz_tag").val(response['blog_tag'].replace(/,/g, " | "));
+    $("#prikaz_tagen").val(response['blog_tag_en'].replace(/,/g, " | "));
 }
 
 // Otvaranje modala i popunjavanje podacima iz tabele
@@ -172,4 +175,13 @@ $("#forma_blog").submit(function(event) {
         });
     }
 
+});
+
+$(document).ready(function() {
+    $("#tag").keyup(function() {
+        $("#prikaz_tag").val($("#tag").val().replace(/,/g, " | "));
+    });
+    $("#tagen").keyup(function() {
+        $("#prikaz_tagen").val($("#tagen").val().replace(/,/g, " | "));
+    });
 });

@@ -83,8 +83,9 @@ $("#user_forma").submit(function(event) {
                     alertify.showFailure(message).set('maximizable', false);
                 } else {
                     alertify.showSuccess(message).set('maximizable', false);
-                    //$("#modal_window").css("display", "none");
-                    // $("#lozinka").val(message);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
                 }
             }
         });

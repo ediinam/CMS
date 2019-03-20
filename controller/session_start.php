@@ -1,3 +1,8 @@
 <?php ob_start();?>
 <?php session_start();
-$korisnik_id = $_SESSION['kor_id']; ?>
+if(isset($_SESSION['kor_id'])){
+$korisnik_id = $_SESSION['kor_id'];
+}else{
+    header("Location: ../../index.php");
+}
+ ?>
