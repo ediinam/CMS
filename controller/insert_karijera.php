@@ -9,6 +9,18 @@
     $karijera_opis = check_input($_POST['opis']);
     $karijera_opis_en = check_input($_POST['opisen']);
 
+    $karijera_datum_unosa = date("Y-m-d");
+
+    if(statusKarijera($karijera_pocetak, $karijera_kraj) == "1"){
+        $karijera_status = "aktivan";
+    }else if(statusKarijera($karijera_pocetak, $karijera_kraj) == "0"){
+        $karijera_status = "neaktivan";
+    }else{
+        echo "Greška";
+    };
+
+
+
     $karijera_cover_name = $_POST['cover_fotografija'];
 
     $karijera_cover1 = $_FILES['coverslika']['name'];
@@ -35,11 +47,11 @@
 
 
     if(isset($_POST['karijera_id']) && empty($_POST['karijera_id'])){
-        $array_karijera = array("karijera_naslov"=>"{$karijera_naslov}","karijera_naslov_en"=>"{$karijera_naslov_en}","karijera_pocetak"=>"{$karijera_pocetak}","karijera_kraj"=>"{$karijera_kraj}","karijera_opis"=>"{$karijera_opis}","karijera_opis_en"=>"{$karijera_opis_en}","karijera_cover"=>"{$karijera_cover_name}","karijera_datum_unosa"=>"","karijera_status"=>"neaktivan");
+        $array_karijera = array("karijera_naslov"=>"{$karijera_naslov}","karijera_naslov_en"=>"{$karijera_naslov_en}","karijera_pocetak"=>"{$karijera_pocetak}","karijera_kraj"=>"{$karijera_kraj}","karijera_opis"=>"{$karijera_opis}","karijera_opis_en"=>"{$karijera_opis_en}","karijera_cover"=>"{$karijera_cover_name}","karijera_datum_unosa"=>"{$karijera_datum_unosa}","karijera_status"=>"{$karijera_status}");
         $red = dodajRedTabele('karijera',$array_karijera);
         echo $red;
     }else if(isset($_POST['karijera_id']) && !empty($_POST['karijera_id'])){
-        $array_karijera = array("karijera_naslov"=>"{$karijera_naslov}","karijera_naslov_en"=>"{$karijera_naslov_en}","karijera_pocetak"=>"{$karijera_pocetak}","karijera_kraj"=>"{$karijera_kraj}","karijera_opis"=>"{$karijera_opis}","karijera_opis_en"=>"{$karijera_opis_en}","karijera_cover"=>"{$karijera_cover_name}");
+        $array_karijera = array("karijera_naslov"=>"{$karijera_naslov}","karijera_naslov_en"=>"{$karijera_naslov_en}","karijera_pocetak"=>"{$karijera_pocetak}","karijera_kraj"=>"{$karijera_kraj}","karijera_opis"=>"{$karijera_opis}","karijera_opis_en"=>"{$karijera_opis_en}","karijera_cover"=>"{$karijera_cover_name}","karijera_status"=>"{$karijera_status}");
         $karijera_id = $_POST['karijera_id'];
         $red = promijeniRedTabele('karijera',$karijera_id,$array_karijera);
         echo $red;

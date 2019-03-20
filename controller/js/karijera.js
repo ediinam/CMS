@@ -149,6 +149,7 @@ $('button.izmijenikarijera').click(function(event) {
                 displayModal();
             } else {
                 alertify.showFailure("Došlo je do greške!").set('maximizable', false);
+                //alertify.showFailure(message).set('maximizable', false);
             }
         }
     });

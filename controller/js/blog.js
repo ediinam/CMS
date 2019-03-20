@@ -62,8 +62,8 @@ function parseJsonBlog(response) {
     $("#ime_prezime").val(response['blog_ime_autora']);
     $("#datepicker").val(response['blog_vrijeme']);
     $("#uvodni_tekst").val(response['blog_uvodni_tekst']);
-    //$("#uvodni_teksten").val(response['blog_uvodni_tekst_en']);
-    $("#editor1").html(response['blog_glavni_tekst']);
+    $("#uvodni_teksten").val(response['blog_uvodni_tekst_en']);
+    $("#editor1").val(response['blog_glavni_tekst']);
     $("#editor2").val(response['blog_glavni_tekst_en']);
     $("#statusinput").val(response['blog_cover']);
     //$("#cover_preview").attr('src', '../img/' + response['blog_cover']);

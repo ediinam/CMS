@@ -83,6 +83,9 @@ $(document).ready(function() {
                 // CKEDITOR.replace('editor2')
                 ClassicEditor
                     .create(document.querySelector('#editor1'))
+                    .then(newEditor => {
+                        editor = newEditor;
+                    })
                     .catch(error => {
                         console.error(error);
                     });

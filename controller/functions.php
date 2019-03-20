@@ -19,4 +19,17 @@ function responseAsArray($el){
     $response.='}';
     return $response;
 }  
+
+function statusKarijera($pocetak, $kraj)
+{
+    $trenutni_dat = strtotime(date("Y-m-d"));
+    $pocetak = strtotime($pocetak);
+    $kraj = strtotime($kraj);
+  
+  if(($trenutni_dat >= $pocetak) && ($trenutni_dat <= $kraj)){
+      return "1";
+  }else{
+      return "0";
+  };
+}
 ?>
