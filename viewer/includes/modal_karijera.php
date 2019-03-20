@@ -54,7 +54,6 @@
                     <input type="text" class="form-control img-input" id="statusinput" name="cover_fotografija" readonly>
                     <div class="upload-imgs-container upload-imgs-container-width">
                         <div class="upload-image-container">
-                        <img src="" class="preview-img fotografija" id="cover_preview" alt="Prevucite sliku!">
                             <input type="file" class="dropzone" id="coverslika" name="coverslika" onchange="statusInput('coverslika','statusinput')">
                         </div>
                         <div>

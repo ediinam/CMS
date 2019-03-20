@@ -62,11 +62,11 @@ function parseJsonBlog(response) {
     $("#ime_prezime").val(response['blog_ime_autora']);
     $("#datepicker").val(response['blog_vrijeme']);
     $("#uvodni_tekst").val(response['blog_uvodni_tekst']);
-    $("#uvodni_teksten").val(response['blog_uvodni_tekst_en']);
+    //$("#uvodni_teksten").val(response['blog_uvodni_tekst_en']);
     $("#editor1").html(response['blog_glavni_tekst']);
     $("#editor2").val(response['blog_glavni_tekst_en']);
     $("#statusinput").val(response['blog_cover']);
-    $("#cover_preview").attr('src', '../img/' + response['blog_cover']);
+    //$("#cover_preview").attr('src', '../img/' + response['blog_cover']);
     $("#alt").val(response['blog_alt']);
     $("#alten").val(response['blog_alt_en']);
     $("#tag").val(response['blog_tag']);
@@ -97,8 +97,8 @@ $('button.izmijeniblog').click(function(event) {
             }
         }
     });
-});
 
+});
 
 // Izmijena ili unos novog reda u tabeli
 $("#forma_blog").submit(function(event) {

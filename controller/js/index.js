@@ -25,7 +25,7 @@ $('#login_forma').submit(function(event) {
             processData: false,
             success: function(message) {
                 if (message != "Uspješno ste se ulogovali!") {
-                    alertify.showFailure(message).set('closable', false).set('maximizable', false);
+                    alertify.showFailure(message).set('maximizable', false);
 
                 } else {
                     window.location.replace("viewer/mypages/starter.php");

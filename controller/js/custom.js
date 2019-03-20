@@ -55,7 +55,11 @@ function abortHandler(event) {
 // END OF UPLOAD IMAGES
 
 $(".odustani").click(function() {
-    $(this).parent().parent()[0].reset();
     $("input").removeClass("error-field");
-    $("#modal_window").css("display", "none");
+    alertify.confirm('', 'Da li ste sigurni da želite da zatvorite prozor?', function() {
+        // console.log("Ostaje mi otvoren modal");
+    }, function() {
+        $("#modal_window").css("display", "none");
+        //console.log("Zatvara se modal");
+    }).set({ labels: { ok: 'Da', cancel: 'Ne' } });
 });

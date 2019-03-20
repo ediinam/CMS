@@ -35,6 +35,7 @@ $("textarea").change(function() {
     $(this).removeClass("error-field");
 });
 
+
 //Sakrivanje reda tabele
 function hideRow(el) {
     $(el).css("display", "none");
@@ -105,5 +106,6 @@ $(document).ready(function() {
             autoclose: true
         })
     }
+
 
 });

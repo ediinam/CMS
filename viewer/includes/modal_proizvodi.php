@@ -51,7 +51,6 @@
                         <input type="text" class="form-control img-input" id="statusinput" name="upload_cover" readonly>
                          <div class="upload-imgs-container  upload-imgs-container-width">
                             <div class="upload-image-container">
-                            <img src="" class="preview-img fotografija" id="cover_preview" alt="Prevucite sliku!">
                                 <input type="file" class="dropzone" name="coverslika" id="coverslika" onchange="statusInput('coverslika','statusinput')">
                             </div>
                             <div>
@@ -67,7 +66,6 @@
                         <!-- <div id="uploads"></div> -->
                          <div class="upload-imgs-container upload-imgs-container-width">
                             <div class="upload-image-container">
-                            <img src="" class="preview-img fotografija" id="upload_preview" alt="Prevucite sliku!">
                                 <input type="file" class="dropzone" id="uploadslika" name="uploadslika" onchange="statusInput('uploadslika','statusinput2')">
                             </div>
                             <div>

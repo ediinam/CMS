@@ -134,9 +134,9 @@ function parseJsonProizvodi(response) {
     $("#editor1").val(response['proizvodi_glavni_tekst']);
     $("#editor2").val(response['proizvodi_glavni_tekst_en']);
     $("#statusinput").val(response['proizvodi_cover']);
-    $("#cover_preview").attr('src', '../img/' + response['proizvodi_cover']);
+    //$("#cover_preview").attr('src', '../img/' + response['proizvodi_cover']);
     $("#statusinput2").val(response['proizvodi_uvodna_foto']);
-    $("#upload_preview").attr('src', '../img/' + response['proizvodi_uvodna_foto']);
+    //$("#upload_preview").attr('src', '../img/' + response['proizvodi_uvodna_foto']);
     $("#alt").val(response['proizvodi_alt']);
     $("#alten").val(response['proizvodi_alt_en']);
 }

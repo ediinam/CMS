@@ -126,7 +126,7 @@ function parseJsonKarijera(response) {
     $("#opis").val(response['karijera_opis']);
     $("#opisen").val(response['karijera_opis_en']);
     $("#statusinput").val(response['karijera_cover']);
-    $("#cover_preview").attr('src', '../img/' + response['karijera_cover']);
+    //$("#cover_preview").attr('src', '../img/' + response['karijera_cover']);
 }
 
 // Otvaranje modala i popunjavanje podacima iz tabele
